@@ -7,6 +7,24 @@ from colorama import Fore, Style, init
 import concurrent.futures
 import time
 
+# vigilante_core.py (Tetap pertahankan fungsi utamanya)
+import requests
+# ... (imports lainnya)
+
+class VigilanteEngine:
+    def __init__(self):
+        self.headers = {'User-Agent': 'Mozilla/5.0...'}
+
+    def search_username(self, username):
+        # Kembalikan hasil dalam bentuk list/dict agar GUI bisa menampilkan
+        results = []
+        # ... (logika pencarian)
+        return results
+
+    def analyze_phone(self, phone):
+        # ... (logika telepon)
+        return data_dict
+
 init(autoreset=True)
 
 class VigilanteOSINT:
