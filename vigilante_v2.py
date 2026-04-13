@@ -6,6 +6,31 @@ import face_recognition
 import cv2
 from PIL import Image, ImageTk
 
+import customtkinter as ctk
+from vigilante_core import VigilanteEngine # IMPORT CORE ENGINE
+import shodan
+# ... (imports lainnya)
+
+class VigilanteV2(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        self.engine = VigilanteEngine() # INISIALISASI ENGINE LAMA
+        self.setup_gui()
+
+    def setup_gui(self):
+        # ... (Kode GUI yang sebelumnya saya berikan)
+        pass
+
+    def run_recon(self):
+        target = self.input_target.get()
+        self.log(f"[*] Triggering Engine for: {target}")
+        
+        # MEMANGGIL FUNGSI DARI CORE LAMA
+        data = self.engine.search_username(target)
+        for entry in data:
+            self.log(f"[+] Found: {entry}")
+
+# ... (Sisa kode GUI)
 # Configuration
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
