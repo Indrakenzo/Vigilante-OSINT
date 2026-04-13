@@ -5,9 +5,9 @@ phonenumbers
 colorama
 urllib3
 customtkinter
-requests
 folium
 shodan
 face_recognition
 opencv-python
 pillow
+python-dotenv
