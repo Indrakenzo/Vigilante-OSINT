@@ -10,4 +10,3 @@ shodan
 face_recognition
 opencv-python
 pillow
-python-dotenv
