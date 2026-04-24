@@ -3,19 +3,22 @@ import argparse
 import requests
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
+from dotenv import load_dotenv
+
+# Memuat variabel lingkungan dari file .env
+load_dotenv()
 
 class SilentiumOSINT:
     def __init__(self):
-        self.version = "2.0.0 (Identity & Breach Edition)"
+        self.version = "2.1.0 (Secure Vault Edition)"
         self.banner = f"""
         =========================================
            SILENTIUM-SHIELD OSINT SUITE v{self.version}
            Target: Reverse Caller & Data Breach
         =========================================
         """
-        # Konfigurasi API - Sir Indra, silakan isi API Key Anda di sini
-        self.truecaller_api_key = "ISI_API_KEY_RAPIDAPI_TRUECALLER_ANDA"
-        self.hibp_api_key = "ISI_API_KEY_HIBP_ANDA"
+        # Menarik API Key dari file .env secara aman
+        self.truecaller_api_key = os.getenv("TRUECALLER_API_KEY")
 
     def reverse_caller(self, phone_number):
         """Melacak identitas dari nomor HP menggunakan Truecaller API (via RapidAPI)"""
